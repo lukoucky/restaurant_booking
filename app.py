@@ -9,9 +9,9 @@ def create_app(test_config=None):
     app = Flask(__name__)
 
     if 'DATABASE_URL' in os.environ:
-		setup_db(app, os.environ['DATABASE_URL'])
-	else:
-		setup_db(app)
+        setup_db(app, os.environ['DATABASE_URL'])
+    else:
+        setup_db(app)
     CORS(app)
 
     @app.route('/')
