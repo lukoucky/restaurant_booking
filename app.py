@@ -7,7 +7,11 @@ from models import setup_db, RestaurantTable
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
-    setup_db(app)
+
+    if 'DATABASE_URL' in os.environ:
+		setup_db(app, os.environ['DATABASE_URL'])
+	else:
+		setup_db(app)
     CORS(app)
 
     @app.route('/')
