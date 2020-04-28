@@ -1,0 +1,1 @@
+export ENV_VALUE='my_variable'
